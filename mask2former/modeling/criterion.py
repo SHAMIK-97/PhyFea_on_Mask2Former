@@ -165,8 +165,9 @@ class SetCriterion(nn.Module):
         semseg = torch.einsum("bqc,bqhw->bchw",pred_logits ,pred_masks)
 
         if self.dataset_used =='ADE20k':
-           sublist = random.sample(invalid_list_ADE20k, self.sublist_size)
-           self.phyfea.invalid_pair_list = sublist
+           with torch.no_grad():
+                sublist = random.sample(invalid_list_ADE20k, self.sublist_size)
+                self.phyfea.invalid_pair_list = sublist
 
         l1_norm = self.phyfea(semseg)
         
