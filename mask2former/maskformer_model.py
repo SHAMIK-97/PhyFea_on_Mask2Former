@@ -105,7 +105,7 @@ class MaskFormer(nn.Module):
         class_weight = cfg.MODEL.MASK_FORMER.CLASS_WEIGHT
         dice_weight = cfg.MODEL.MASK_FORMER.DICE_WEIGHT
         mask_weight = cfg.MODEL.MASK_FORMER.MASK_WEIGHT
-        phyFea_weight =  1e-9
+        phyFea_weight = cfg.PHYFEA.WEIGHT 
 
         # building criterion
         matcher = HungarianMatcher(
@@ -135,6 +135,7 @@ class MaskFormer(nn.Module):
             num_points=cfg.MODEL.MASK_FORMER.TRAIN_NUM_POINTS,
             oversample_ratio=cfg.MODEL.MASK_FORMER.OVERSAMPLE_RATIO,
             importance_sample_ratio=cfg.MODEL.MASK_FORMER.IMPORTANCE_SAMPLE_RATIO,
+            dataset_used=cfg.DATASETS.NAME,
         )
 
         return {

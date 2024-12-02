@@ -77,3 +77,7 @@ python tools/analyze_model.py --num-inputs 100 --tasks flop --config-file CONFIG
 ```
 
 Note that, for panoptic and instance segmentation, we compute the average flops over 100 real validation images.
+
+
+Configure each file computeInfeasibleInclusionACDC.py, computeInfeasibleInclusionADE20K.py, computeInfeasibleInclusionCityscapes.py, the variable "dataset_path"
+to extract infesible Inclusion pairs for corresponding datasets. 

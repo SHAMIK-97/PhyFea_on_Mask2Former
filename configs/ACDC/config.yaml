@@ -359,6 +359,8 @@ MODEL:
     USE_CHECKPOINT: false
     WINDOW_SIZE: 12
   WEIGHTS: swin_large_patch4_window12_384_22k.pkl
+PHYFEA:
+  WEIGHT: 1e-9
 OUTPUT_DIR: exps/acdc_sem_seg_src_swin_large_90k
 SEED: -1
 SOLVER:

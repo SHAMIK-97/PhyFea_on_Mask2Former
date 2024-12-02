@@ -13,13 +13,16 @@ MODEL:
     OUT_FEATURES: ["res2", "res3", "res4", "res5"]
     NORM: "SyncBN"  # use syncbn for cityscapes dataset
     RES5_MULTI_GRID: [1, 1, 1]  # not used
+PHYFEA:
+  WEIGHT: 1e-9
 DATASETS:
   TRAIN: ("cityscapes_fine_sem_seg_train",)
   TEST: ("cityscapes_fine_sem_seg_val",)
+  NAME: "Cityscapes"
 SOLVER:
-  IMS_PER_BATCH: 4
-  BASE_LR: 0.000025 
-  MAX_ITER: 14000
+  IMS_PER_BATCH: 8
+  BASE_LR: 1.491e-07 #0.000004 #5.384918153671243e-09 #0.0001 
+  MAX_ITER: 30000
   WARMUP_FACTOR: 1.0
   WARMUP_ITERS: 0
   WEIGHT_DECAY: 0.05
@@ -57,5 +60,5 @@ TEST:
     FLIP: True
 DATALOADER:
   FILTER_EMPTY_ANNOTATIONS: True
-  NUM_WORKERS: 4
+  NUM_WORKERS: 1
 VERSION: 2

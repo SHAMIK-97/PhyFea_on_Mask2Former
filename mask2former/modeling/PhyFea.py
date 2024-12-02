@@ -23,7 +23,7 @@ class MaxPoolMatMulLayer(nn.Module):
 
 class MaxPoolMatMulStack(nn.Module):
 
-      def __init__(self, num_layers=256, kernel_size=3, stride=1, padding=1):
+      def __init__(self, num_layers=128, kernel_size=3, stride=1, padding=1):
 
           super(MaxPoolMatMulStack, self).__init__()
           self.num_layers = num_layers
@@ -52,10 +52,10 @@ class MaxPoolMatMulStack(nn.Module):
 
 class PhysicsFormer(nn.Module):
 
-      def __init__(self,invalid_pair_list):
+      def __init__(self,invalid_pair_list=None):
 
           super(PhysicsFormer,self).__init__()
-          self.T=256
+          self.T=128
           self.invalid_pair_list = invalid_pair_list
           self.maxpooling = MaxPoolMatMulStack(num_layers=self.T, kernel_size=3, stride=1, padding=1)
           self.relu = nn.ReLU(inplace=False)
@@ -86,7 +86,7 @@ class PhysicsFormer(nn.Module):
               concatenated_tensor = torch.cat((logits_upscaled[:,pair[0]:pair[0]+1,::], logits_upscaled[:,pair[1]:pair[1]+1,::]), dim=1)
               softmax = torch.softmax(concatenated_tensor,dim=1)
               #torch.save(softmax,f'/cluster/work/cvl/shbasu/softmax_{idx}.pt')
-              difference = softmax[:, 1:2, :, :] - softmax[:, 0:1, :, :]
+              difference = softmax[:, 0:1, :, :] - softmax[:, 1:2, :, :]
               relu = self.relu(difference)
               #torch.save(relu,f'/cluster/work/cvl/shbasu/relu_{idx}.pt')
               pairs.append(relu)

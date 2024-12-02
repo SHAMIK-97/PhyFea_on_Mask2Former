@@ -13,6 +13,8 @@ MODEL:
     OUT_FEATURES: ["res2", "res3", "res4", "res5"]
     # NORM: "SyncBN"
     RES5_MULTI_GRID: [1, 1, 1]  # not used
+PHYFEA:
+  WEIGHT: 1e-9
 DATASETS:
   TRAIN: ("ade20k_sem_seg_train",)
   TEST: ("ade20k_sem_seg_val",)

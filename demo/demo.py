@@ -5,6 +5,10 @@ import glob
 import multiprocessing as mp
 import os
 
+
+from PIL import Image
+from cityscapesscripts.helpers import labels
+
 # fmt: off
 import sys
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
@@ -29,6 +33,8 @@ from predictor import VisualizationDemo
 
 # constants
 WINDOW_NAME = "mask2former demo"
+
+
 
 
 def setup_cfg(args):
@@ -111,6 +117,7 @@ if __name__ == "__main__":
         if len(args.input) == 1:
             args.input = glob.glob(os.path.expanduser(args.input[0]))
             assert args.input, "The input path(s) was not found"
+
         for path in tqdm.tqdm(args.input, disable=not args.output):
             # use PIL, to be consistent with evaluation
             img = read_image(path, format="BGR")
@@ -133,7 +140,19 @@ if __name__ == "__main__":
                 else:
                     assert len(args.input) == 1, "Please specify a directory with args.output"
                     out_filename = args.output
-                visualized_output.save(out_filename)
+                visualized_output = visualized_output.cpu().numpy()
+                visualized_output_copy = visualized_output.copy()
+                #color_result = np.zeros([1024,2048,3])
+                for label in labels.labels:
+                    visualized_output_copy[visualized_output==label.trainId] = label.id
+                    #color_result[visualized_output==label.trainId] = label.color
+                visualized_output_copy = visualized_output_copy.astype(dtype = np.uint8)
+                #color_result = color_result.astype(dtype = np.uint8)
+                im = Image.fromarray(visualized_output_copy)
+                #im_color = Image.fromarray(color_result)
+                im.save(out_filename.replace('_leftImg8bit','*'))
+                #im_color.save(os.path.basename(path).replace('_leftImg8bit','_color_map'))
+                #visualized_output.save(out_filename)
             else:
                 cv2.namedWindow(WINDOW_NAME, cv2.WINDOW_NORMAL)
                 cv2.imshow(WINDOW_NAME, visualized_output.get_image()[:, :, ::-1])
