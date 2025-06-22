@@ -1,6 +1,6 @@
-# Mask2Former: Masked-attention Mask Transformer for Universal Image Segmentation (CVPR 2022)
+# PhyFea: Physically Feasible Semantic Segmentation
 
-[Bowen Cheng](https://bowenc0221.github.io/), [Ishan Misra](https://imisra.github.io/), [Alexander G. Schwing](https://alexander-schwing.de/), [Alexander Kirillov](https://alexander-kirillov.github.io/), [Rohit Girdhar](https://rohitgirdhar.github.io/)
+Shamik Basu, Luc Van Gool, Christos Sakaridis
 
 [[`arXiv`](https://arxiv.org/abs/2112.01527)] [[`Project`](https://bowenc0221.github.io/mask2former)] [[`BibTeX`](#CitingMask2Former)]
 
