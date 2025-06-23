@@ -31,7 +31,7 @@ Shield: [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](h
 
 The majority of PhyFea is licensed under a [MIT License](LICENSE).
 
-## <a name="CitingMask2Former"></a>Citing Mask2Former
+## <a name="CitingMask2Former"></a>Citing PhyFea
 
 ```BibTex
 @misc{basu2025physicallyfeasiblesemanticsegmentation,
