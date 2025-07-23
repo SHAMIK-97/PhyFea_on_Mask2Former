@@ -21,7 +21,7 @@ See [installation instructions](INSTALL.md).
 
 ## Getting Started
 
-See [Preparing Datasets for PhyFea](datasets/README.md).
+See [Preparing Datasets for InSeIn](datasets/README.md).
 
 See [Getting Started with Mask2Former](GETTING_STARTED.md).
 
@@ -35,7 +35,7 @@ The majority of PhyFea is licensed under a [MIT License](LICENSE).
 
 ```BibTex
 @misc{basu2025physicallyfeasiblesemanticsegmentation,
-      title={Physically Feasible Semantic Segmentation}, 
+      title={Optimizing against Infeasible Inclusions from Data for Semantic Segmentation through Morphology}, 
       author={Shamik Basu and Luc Van Gool and Christos Sakaridis},
       year={2025},
       eprint={2408.14672},
