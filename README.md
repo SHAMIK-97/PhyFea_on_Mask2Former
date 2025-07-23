@@ -34,7 +34,7 @@ The majority of PhyFea is licensed under a [MIT License](LICENSE).
 ## <a name="CitingMask2Former"></a>Citing PhyFea
 
 ```BibTex
-@misc{basu2025physicallyfeasiblesemanticsegmentation,
+@misc{basu2025InSeIn,
       title={Optimizing against Infeasible Inclusions from Data for Semantic Segmentation through Morphology}, 
       author={Shamik Basu and Luc Van Gool and Christos Sakaridis},
       year={2025},
