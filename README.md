@@ -25,13 +25,8 @@ See [Preparing Datasets for InSeIn](datasets/README.md).
 
 See [Getting Started with Mask2Former](GETTING_STARTED.md).
 
-## License
 
-Shield: [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-The majority of PhyFea is licensed under a [MIT License](LICENSE).
-
-## <a name="CitingMask2Former"></a>Citing PhyFea
+## <a name="CitingMask2Former"></a>Citing InSeIn
 
 ```BibTex
 @misc{basu2025InSeIn,
