@@ -1,4 +1,4 @@
-# PhyFea: Physically Feasible Semantic Segmentation
+# InSeIn: Optimizing against Infeasible Inclusions from Data for Semantic Segmentation through Morphology
 
 Shamik Basu, Luc Van Gool, Christos Sakaridis
 
